@@ -1,9 +1,9 @@
 #list-area {
   .alert-info,
   .show-more.has-topics {
-    position: sticky !important;
-    position: -webkit-sticky !important;
-    top: var(--header-offset) !important;
+    position: sticky;
+    position: -webkit-sticky;
+    top: var(--header-offset);
     z-index: 8;
     @if $align_text_center == "true" {
       span {
@@ -11,10 +11,10 @@
       }
     }
     @if $fixed_bottom_position == "true" {
-      position: fixed !important;
+      position: fixed;
       width: calc(100% - 2em);
       left: 0;
-      top: auto !important;
+      top: auto;
       bottom: 0;
       // iPhone Footer Nav
       body.footer-nav-visible & {
