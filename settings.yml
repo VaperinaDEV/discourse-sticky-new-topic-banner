@@ -5,7 +5,7 @@ align_text_center:
 fixed_bottom_position:
   type: bool
   default: false
-  description: "New topics banner fixed to bottom on mobile."
+  description: "New topic banner fixed to bottom on mobile."
 tab_bar_enabled:
   type: bool
   default: false
