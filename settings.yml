@@ -1,0 +1,12 @@
+align_text_center:
+  type: bool
+  default: false
+  description: "Align banner text to center."
+fixed_bottom_position:
+  type: bool
+  default: false
+  description: "New topics banner fixed to bottom on mobile."
+tab_bar_enabled:
+  type: bool
+  default: false
+  description: "If you use Discourse Tab Bar enable this setting. It will place the new topic banner to the top of the Discourse Tab Bar."

@@ -1,0 +1,21 @@
+#list-area {
+  .alert-info,
+  .show-more.has-topics {
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: var(--header-offset) !important;
+    z-index: 8;
+    @if $align_text_center == "true" {
+      a {
+        padding: 16px 35px;
+        span {
+          margin: auto;
+        }
+      }
+    }
+  }
+}    
+
+.list-controls {
+  scroll-margin-top: calc(var(--header-offset) * 2);
+}

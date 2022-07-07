@@ -1,0 +1,12 @@
+<script type="text/discourse-plugin" version="0.8">
+  api.modifyClass("controller:discovery/topics", {
+    pluginId: "sticky-new-topics-banner",
+    actions: {
+      showInserted() {
+        const listControls = document.querySelector(".list-controls");
+        listControls.scrollIntoView();
+        this._super(...arguments);
+      }
+    }
+  });
+</script>
