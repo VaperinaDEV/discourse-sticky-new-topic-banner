@@ -9,4 +9,9 @@ fixed_bottom_position:
 tab_bar_enabled:
   type: bool
   default: false
-  description: "If you use Discourse Tab Bar enable this setting. It will place the new topic banner to the top of the Discourse Tab Bar."
+  description: "If you use Discourse Tab Bar, enable this setting. It will place the new topic banner to the top of the Discourse Tab Bar."
+fkbpro_theme_enabled:
+  type: bool
+  default: false
+  description: "If you use FKB Pro theme, enable this setting."
+
