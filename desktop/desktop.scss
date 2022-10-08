@@ -1,5 +1,4 @@
 #list-area {
-  .alert-info,
   .show-more.has-topics {
     position: sticky;
     position: -webkit-sticky;
@@ -11,7 +10,7 @@
     }
     z-index: 8;
     @if $align_text_center == "true" {
-      a {
+      .alert.alert-info.clickable {
         padding: 16px 35px;
         span {
           margin: auto;

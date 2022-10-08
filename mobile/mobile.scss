@@ -1,6 +1,5 @@
 #list-area {
-  .alert-info,
-  .show-more.has-topics {
+  .alert.alert-info.clickable {
     position: sticky;
     position: -webkit-sticky;
     top: var(--header-offset);
@@ -46,8 +45,7 @@
         }
         &.tab-bar-hidden {
           #list-area {
-            .alert-info,
-            .show-more.has-topics {
+            .alert.alert-info.clickable {
               padding-bottom: env(safe-area-inset-bottom);
               margin-bottom: 0;
               bottom: 0;
