@@ -20,7 +20,7 @@
       bottom: 0;
       // iPhone Footer Nav
       body.footer-nav-visible & {
-        bottom: 49px;
+        bottom: var(--footer-nav-height);
       }
       @if $tab_bar_enabled == "true" {
         bottom: 49px;
@@ -35,11 +35,10 @@
       margin-bottom: 0;
       z-index: z("dropdown") - 1;
       transition: all 0.1s ease-out;
-      // iPad Footer Nav
+      // iPad Footer
       body.footer-nav-ipad {
         #list-area {
-          .alert-info,
-          .show-more.has-topics {
+          .alert.alert-info.clickable {
             margin-bottom: 20px;
           }
         }
