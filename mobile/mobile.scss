@@ -12,9 +12,6 @@
     @if $fixed_bottom_position == "true" {
       position: fixed;
       width: calc(100% - 2em);
-      @if $fkbpro_theme_enabled == "true" {
-        width: 100%;
-      }
       left: 0;
       top: auto;
       bottom: 0;
