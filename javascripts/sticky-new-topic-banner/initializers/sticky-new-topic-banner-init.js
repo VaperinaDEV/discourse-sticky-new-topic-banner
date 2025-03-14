@@ -1,25 +1,34 @@
-import { withPluginApi } from "discourse/lib/plugin-api";
+import { apiInitializer } from "discourse/lib/api";
 import { action } from "@ember/object";
+import { popupAjaxError } from "discourse/lib/ajax-error";
 
-export default {
-  name: "sticky-new-topic-banner",
-  initialize() {
-    withPluginApi("0.8.7", (api) => {
-      api.modifyClass("controller:discovery/topics", {
-        pluginId: "sticky-new-topics-banner",
+export default apiInitializer("1.8.0", (api) => {
+  
+  api.modifyClass(
+    "component:discovery/topics",
+    (Superclass) =>
+      class extends Superclass {
         @action
-        showInserted(event) {
+        async showInserted(event) {
           event?.preventDefault();
-          const tracker = this.topicTrackingState;
-        
+          
+          if (this.args.model.loadingBefore) {
+            return; // Already loading
+          }
+    
           const listControls = document.querySelector(".list-controls");
           listControls.scrollIntoView();
-
-          // Move inserted into topics
-          this.model.loadBefore(tracker.get("newIncoming"), true);
-          tracker.resetTracking();
+          
+          const { topicTrackingState } = this;
+          
+          try {
+            const topicIds = [...topicTrackingState.newIncoming];
+            await this.args.model.loadBefore(topicIds, true);
+            topicTrackingState.clearIncoming(topicIds);
+          } catch (e) {
+            popupAjaxError(e);
+          }
         }
-      });
-    });
-  },
-};
+      }
+  );
+});
